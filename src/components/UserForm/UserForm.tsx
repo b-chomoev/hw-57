@@ -1,6 +1,14 @@
+import { useState } from 'react';
+
 const userRoles = ['user', 'editor', 'admin'];
 
 const UserForm = () => {
+  const [checked, setChecked] = useState(false);
+
+  const handleChange = () => {
+    setChecked(!checked);
+  }
+
   return (
     <form>
       <h3>Add new User</h3>
@@ -28,17 +36,17 @@ const UserForm = () => {
       </div>
 
       <div className='form-group mb-2'>
-        <label htmlFor="status">Status:</label>
+        <label htmlFor="status" className='me-2'>Active?</label>
         <input
           type="checkbox"
-          id='status'
-          name='status'
-          className='form-control'
-          required
+          checked={checked}
+          onChange={handleChange}
+          id="status"
+          name="status"
         />
       </div>
 
-      <div className='form-group mb-2'>
+      <div className="form-group mb-2">
         <label htmlFor="userRole">User Role:</label>
         <select name="userRole" id="userRole">
           <option value="">Select your role</option>
