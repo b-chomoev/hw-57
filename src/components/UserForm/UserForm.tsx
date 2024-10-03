@@ -47,7 +47,7 @@ const UserForm = () => {
       </div>
 
       <div className="form-group mb-2">
-        <label htmlFor="userRole">User Role:</label>
+        <label htmlFor="userRole" className='me-2'>User Role:</label>
         <select name="userRole" id="userRole">
           <option value="">Select your role</option>
           {userRoles.map((role) => (
