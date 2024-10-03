@@ -27,7 +27,7 @@ const UserForm = () => {
       <div className='form-group mb-2'>
         <label htmlFor="email">Email:</label>
         <input
-          type="text"
+          type="email"
           id='email'
           name='email'
           className='form-control'

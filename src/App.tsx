@@ -1,8 +1,14 @@
 import ToolBar from './components/ToolBar/ToolBar.tsx';
 import UserForm from './components/UserForm/UserForm.tsx';
 import Users from './components/Users/Users.tsx';
+import { useState } from 'react';
+import { IUser } from './types';
 
 const App = () => {
+  const [users, setUsers] = useState<IUser[]>([
+    {id: '1', name: 'Beksultan', email: 'chomoevbeksultan@gmail.com', isActive: true, role: 'admin'},
+  ]);
+
   return (
     <>
       <header>
@@ -14,7 +20,7 @@ const App = () => {
             <UserForm />
           </div>
           <div className='col-6 mb-2'>
-            <Users />
+            <Users users={users}/>
           </div>
         </div>
       </main>
