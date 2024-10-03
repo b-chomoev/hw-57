@@ -3,5 +3,12 @@ export interface IUser {
   name: string;
   email: string;
   isActive: boolean;
-  role: string;
+  userRole: string;
+}
+
+export interface IUserMutation {
+  name: string;
+  email: string;
+  isActive: boolean;
+  userRole: string;
 }

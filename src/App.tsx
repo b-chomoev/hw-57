@@ -5,9 +5,12 @@ import { useState } from 'react';
 import { IUser } from './types';
 
 const App = () => {
-  const [users, setUsers] = useState<IUser[]>([
-    {id: '1', name: 'Beksultan', email: 'chomoevbeksultan@gmail.com', isActive: true, role: 'admin'},
-  ]);
+  const [users, setUsers] = useState<IUser[]>([]);
+
+  const addNewUser = (newUser: IUser) => {
+    setUsers(prevState => [...prevState, newUser]);
+    console.log(users);
+  }
 
   return (
     <>
@@ -17,7 +20,7 @@ const App = () => {
       <main className='container mt-4'>
         <div className='row'>
           <div className='col-6 mb-2'>
-            <UserForm />
+            <UserForm addNewUser={addNewUser}/>
           </div>
           <div className='col-6 mb-2'>
             <Users users={users}/>
